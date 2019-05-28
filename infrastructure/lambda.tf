@@ -1,11 +1,10 @@
 
 resource "aws_lambda_function" "augment-transaction" {
   function_name = "augment-transaction"
+  filename      = "augmentLambda.zip"
 
-  s3_bucket = "${var.s3_bucket}"
-  s3_key    = "augmentLambda.zip"
-  role      = "${aws_iam_role.lambda-exec.arn}"
-  handler   = "index.handler"
+  role    = "${aws_iam_role.lambda-exec.arn}"
+  handler = "index.handler"
 
   runtime = "nodejs8.10"
 }
