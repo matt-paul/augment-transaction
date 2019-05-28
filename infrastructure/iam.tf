@@ -23,7 +23,7 @@ EOF
 # POLICIES
 resource "aws_iam_role_policy" "dynamodb-lambda-policy" {
   name = "dynamodb-lambda-policy"
-  role = aws_iam_role.lambda-exec.id
+  role = "${aws_iam_role.lambda-exec.id}"
   policy = <<EOF
 {
   "Version": "2012-10-17",
