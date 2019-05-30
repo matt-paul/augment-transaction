@@ -1,3 +1,5 @@
 node_modules
 .terraform
 augmentLambda.zip
+dist
+SCRAP.md

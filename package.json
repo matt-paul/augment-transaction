@@ -1,10 +1,27 @@
 {
   "name": "transaction-augmentation",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Matt Paul <mattpaul001@icloud.com>",
   "license": "MIT",
+  "files": [
+    "bin",
+    "dist",
+    "package.json"
+  ],
   "dependencies": {
+    "@types/jest": "^24.0.13",
     "aws-sdk": "^2.463.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
   }
 }
