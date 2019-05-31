@@ -27,6 +27,18 @@ export const augment = (body: any) => {
 
 export const handler = async (event: any) => {
   const body = JSON.parse(event.body)
+
+  const accessToken = process.env.ACCESS_TOKEN
+  const baseURL = process.env.BASE_URL
+  const transactionID = body.data.id
+
+  {
+    {
+      base_url
+    }
+  }
+  ;/transactions/00004599BBGGHTTWZ_ijmnstx
+  //
   return {
     statusCode: "200",
     body: JSON.stringify(augment(body)),
