@@ -1,5 +1,21 @@
-const getEnviroCertificate = (retailer: string) =>
-  `${retailer} has been given a rating of 'Evil' by Greenpeace`
+const getEnviroCertificate = (retailer: string) => {
+  const fancyDb = [
+    {
+      name: "Sainsburys",
+      rating: "Awesome"
+    },
+    {
+      name: "PayPal",
+      rating: "Not good"
+    }
+  ]
+
+  const result = fancyDb.find(entry => entry.name === retailer)
+  if (result) {
+    return `${result.name} is rated ${result.rating} by Carbon Trust`
+  }
+  return `This retailer has no data yet`
+}
 
 export const augment = (body: any) => {
   const data = {
