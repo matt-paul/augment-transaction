@@ -31,10 +31,10 @@ const addToFeed = async () => {
   console.log(feedURL)
 
   const params = new URLSearchParams()
-  params.append("params[title]", "🌍😡✋Stop. Think...")
+  params.append("params[title]", "✋Wait a minute..🌍")
   params.append(
     "params[body]",
-    "Bad Business Ltd has been listed by Greenpeace as the most environmentally destructive swimming trunk manufacturer of the last 10 years. Ir would be worthwhile to look for an alternative "
+    "Flakey Falafels has been listed by Greenspace as the most environmentally destructive falafel supplier of the last 10 years. Do you really want to support this business? "
   )
   params.append(
     "params[image_url]",
