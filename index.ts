@@ -1,26 +1,4 @@
-interface DatabaseEntry {
-  name: string
-  rating: string
-}
-
-export const fancyDb: Array<DatabaseEntry> = [
-  {
-    name: "Sainsburys",
-    rating: "Awesome"
-  },
-  {
-    name: "PayPal",
-    rating: "Not good"
-  }
-]
-
-const addNote = (retailer: string) => {
-  const result = fancyDb.find(entry => entry.name === retailer)
-  if (result) {
-    return `${result.name} is rated ${result.rating} by Carbon Trust`
-  }
-  return `This retailer has no data yet`
-}
+import addNote from "./addNote"
 
 interface Data {
   description: string
@@ -44,6 +22,17 @@ export const handler = async (event: any) => {
   // const trransactionID = body.data.id
   // const augmentTransaction = JSON.stringify(augment(body))
   // post(augmentedTransation)
+
+  // Decide whether we need a feed item or a add a note to transaction
+
+  // THEN....
+  // EITHER.....(2nd iteration for experimenting?)....
+  // Put message in a queue ready to be picked up
+  // Pick up from the queue, cross check with the database, and POST to the feed
+
+  // OR.....(this first)!
+  // Check with database and and POST to correct endpoint....
+  // return a happy status if the post was successful
 
   const answer = augment(body)
   return {
