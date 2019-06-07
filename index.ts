@@ -26,19 +26,12 @@ export const augment = (body: any) => {
 }
 
 export const handler = async (event: any) => {
+  console.log(event)
   const body = JSON.parse(event.body)
 
-  const accessToken = process.env.ACCESS_TOKEN
-  const baseURL = process.env.BASE_URL
-  const transactionID = body.data.id
-
-  {
-    {
-      base_url
-    }
-  }
-  ;/transactions/00004599BBGGHTTWZ_ijmnstx
-  //
+  // const trransactionID = body.data.id
+  // const augmentTransaction = JSON.stringify(augment(body))
+  // post(augmentedTransation)
   return {
     statusCode: "200",
     body: JSON.stringify(augment(body)),

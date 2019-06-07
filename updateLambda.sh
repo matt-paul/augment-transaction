@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
+rm -r dist
+rm infrastructure/augmentLambda.zip
+
+# Run typescipt compiler
 tsc
-cd dist
-rm -r augmentLambda.zip
 
-# Could also tranpile Ts here...
-zip -r augmentLambda.zip index.js
+# Create zip file
+cd dist && zip -r ../infrastructure/augmentLambda.zip index.js
 
-aws lambda update-function-code --function-name augment-transaction --zip-file fileb://augmentLambda.zip
+aws lambda update-function-code --function-name augment-transaction --zip-file fileb://../infrastructure/augmentLambda.zip

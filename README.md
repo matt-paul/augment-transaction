@@ -1,13 +1,24 @@
 **Tech**
-Sign into the [developers portal](https://developers.monzo.com) to get the required access token.
+You will need to sign into the [developers portal](https://developers.monzo.com) with your registered Monzo account email to get the required access token.
 
 ![](infrastructure/augment-trans-1.png)
 
-We need to create the bucket first before running Terraform, due to the lambda needing to be in the bucket
-`aws s3api create-bucket --bucket augment-transaction-bucket --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1`
+Run the Typscript compiler
+`tsc`
 
-To test the lambda from the cli, invoke with.....
-`aws lambda invoke --region=eu-west-1 --function-name=augmentation-transaction --payload "{ type: "transaction.created", data: { description: "Wow Coffee" } }"`
+Create the lambda Zip file for Terraform
+<!-- `zip -r infrastructure/augmentLambda.zip dist/index.js` -->
+`cd dist && zip -r ../infrastructure/augmentLambda.zip index.js`
+ 
+To create the infrastructure...
+`cd ../infrastructure && terraform apply`
 
-To update lambda...
+Create a log group for monitoring the lambda in Cloudwatch
+https://eu-west-1.console.aws.amazon.com/cloudwatch/home?region=eu-west-1#logs:
+/aws/lambda/augment-transaction
+
+
+If you make changes to the lambda, run the following from the root directory
 `./updateLambda.sh`
+
+
