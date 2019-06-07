@@ -6,6 +6,6 @@ rm infrastructure/augmentLambda.zip
 tsc
 
 # Create zip file
-cd dist && zip -r ../infrastructure/augmentLambda.zip index.js
+cd dist && zip -r ../infrastructure/augmentLambda.zip .
 
 aws lambda update-function-code --function-name augment-transaction --zip-file fileb://../infrastructure/augmentLambda.zip

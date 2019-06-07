@@ -1,23 +1,15 @@
-import addNote from "./addNote"
+import { augment } from './augment';
 
-interface Data {
-  description: string
-}
-interface Body {
-  type: string
-  data: Data
-}
-
-export const augment = (body: Body) => {
-  const data = {
-    ...body.data,
-    note: addNote(body.data.description)
-  }
-  return { ...body, data }
-}
+// const addFeedItem = (retailer: string) => {
+//   const result = fancyDb.find(entry => entry.name === retailer);
+//   if (result) {
+//     // generate feedItem first
+//     // post to endpoint
+//   }
+// };
 
 export const handler = async (event: any) => {
-  const body = JSON.parse(event.body)
+  const transaction = JSON.parse(event.body);
 
   // const trransactionID = body.data.id
   // const augmentTransaction = JSON.stringify(augment(body))
@@ -34,12 +26,12 @@ export const handler = async (event: any) => {
   // Check with database and and POST to correct endpoint....
   // return a happy status if the post was successful
 
-  const answer = augment(body)
+  const updatedTransaction = augment(transaction);
   return {
-    statusCode: "200",
-    body: JSON.stringify(answer),
+    statusCode: '200',
+    body: JSON.stringify(updatedTransaction),
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     }
-  }
-}
+  };
+};
