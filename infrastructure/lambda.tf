@@ -6,7 +6,7 @@ resource "aws_lambda_function" "augment-transaction" {
   role    = "${aws_iam_role.lambda-exec.arn}"
   handler = "index.handler"
 
-  runtime = "nodejs8.10"
+  runtime = "nodejs10.x"
 }
 
 resource "aws_lambda_permission" "apigw" {

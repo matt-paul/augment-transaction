@@ -1,15 +1,15 @@
 interface DatabaseEntry {
-  name: string;
-  rating: string;
+  name: string
+  rating: string
 }
 
 export const fancyDb: Array<DatabaseEntry> = [
   {
-    name: 'Sainsburys',
-    rating: 'Awesome'
+    name: "Stunning Shortbread",
+    rating: "Awesome"
   },
   {
-    name: 'PayPal',
-    rating: 'Not good'
+    name: "Fancy Falafels",
+    rating: "Not good"
   }
-];
+]

@@ -1,8 +1,9 @@
 interface Data {
-  description: string;
+  description: string
+  id: string
 }
 
 export interface Transaction {
-  type: string;
-  data: Data;
+  type: string
+  data: Data
 }
