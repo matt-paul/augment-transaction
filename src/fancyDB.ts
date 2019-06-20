@@ -1,4 +1,4 @@
-interface DatabaseEntry {
+export interface DatabaseEntry {
   name: string
   rating: string
 }
@@ -6,10 +6,10 @@ interface DatabaseEntry {
 export const fancyDb: Array<DatabaseEntry> = [
   {
     name: "Stunning Shortbread",
-    rating: "Awesome"
+    rating: "Awesome",
   },
   {
     name: "Fancy Falafels",
-    rating: "Not good"
-  }
+    rating: "Not good",
+  },
 ]

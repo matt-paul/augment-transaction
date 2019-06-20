@@ -1,11 +1,11 @@
 import addToFeed from "./addToFeed"
-import { fancyDb } from "./fancyDB"
+import { fancyDb, DatabaseEntry } from "./fancyDB"
 
 export const handler = async (event: any) => {
   const transaction = JSON.parse(event.body)
 
-  const result = fancyDb.find(
-    entry => entry.name === transaction.data.description
+  const result: DatabaseEntry | undefined = fancyDb.find(
+    entry => entry.name === transaction.data.description,
   )
 
   if (result) {
@@ -13,6 +13,6 @@ export const handler = async (event: any) => {
   }
 
   return {
-    statusCode: "200"
+    statusCode: "200",
   }
 }
