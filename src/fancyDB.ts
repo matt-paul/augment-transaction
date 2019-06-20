@@ -1,15 +1,12 @@
-interface DatabaseEntry {
-  name: string
-  rating: string
-}
+import { DatabaseEntry } from "./types"
 
 export const fancyDb: Array<DatabaseEntry> = [
   {
     name: "Stunning Shortbread",
-    rating: "Awesome"
+    rating: "Awesome",
   },
   {
     name: "Fancy Falafels",
-    rating: "Not good"
-  }
+    rating: "Not good",
+  },
 ]
