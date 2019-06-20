@@ -1,5 +1,7 @@
 import addToFeed from "./addToFeed"
-import { fancyDb, DatabaseEntry } from "./fancyDB"
+import generateEthicalInfo from "./generateEthicalInfo"
+import { fancyDb } from "./fancyDB"
+import { DatabaseEntry } from "./types"
 
 export const handler = async (event: any) => {
   const transaction = JSON.parse(event.body)
@@ -8,8 +10,9 @@ export const handler = async (event: any) => {
     entry => entry.name === transaction.data.description,
   )
 
-  if (result) {
-    addToFeed(transaction)
+  if (result && result.rating === "1") {
+    const ethicalInfo = generateEthicalInfo(result)
+    addToFeed(ethicalInfo)
   }
 
   return {

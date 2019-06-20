@@ -1,7 +1,4 @@
-export interface DatabaseEntry {
-  name: string
-  rating: string
-}
+import { DatabaseEntry } from "./types"
 
 export const fancyDb: Array<DatabaseEntry> = [
   {

@@ -1,6 +1,14 @@
 - [] Setup remote state bucket
 - [] AddFeedItem
 
+What does this app do?
+
+Receives a webhook from Monzo
+Checks if the retailer is in our database of ethical company data.
+// If the retailer is in our fictional database and the rating is poor, we create a feed item that we fire back into the Monzo app
+
+For more information,
+
 **Tech**
 You will need to sign into the [developers portal](https://developers.monzo.com) with your registered Monzo account email to get the required access token.
 

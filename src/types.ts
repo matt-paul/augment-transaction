@@ -7,6 +7,18 @@ export interface Transaction {
   data: Data
 }
 
+export interface EthicalInfo {
+  title: string
+  body: string
+  imageURL: string
+  bodyColour: string
+}
+
+export interface DatabaseEntry {
+  name: string
+  rating: string
+}
+
 // "data": {
 //   "account_id": "acc_00008gju41AHyfLUzBUk8A",
 //   "amount": -350,

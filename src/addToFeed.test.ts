@@ -2,9 +2,11 @@ import addToFeed from "./addToFeed"
 
 describe("addToFeed", () => {
   test("appending params", () => {
-    const transaction = {
-      type: "transaction.created",
-      data: { id: "tx_111", description: "Wow Coffee" },
+    const ethicalData = {
+      title: "✋Wait a minute..🌍",
+      body: "Wow Coffee is a highly unethical retailer",
+      imageURL: "https://icons8.com/icon/43164/globe-earth",
+      bodyColour: "ff0000",
     }
 
     const fetchMock = jest.fn()
@@ -13,7 +15,7 @@ describe("addToFeed", () => {
     }
 
     //@ts-ignore
-    addToFeed(transaction, fetchMock, params)
+    addToFeed(ethicalData, fetchMock, params)
 
     expect(params.append).toHaveBeenCalledWith(
       "params[title]",
