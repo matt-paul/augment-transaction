@@ -1,21 +1,19 @@
-## What does this app do?
+## How can Open Banking aid ethical purchase decisions??
 
-I wrote a blog piece about it [here](https://blog.red-badger.com/how-can-open-banking-aid-ethical-purchase-decisions), check it out!
+This repo accompanies a blog piece I wrote [here](https://blog.red-badger.com/how-can-open-banking-aid-ethical-purchase-decisions), check it out!
 
 ### Summary
 
-When a transation occurs in the Monzo app, we receives a webhook from Monzo with the retailer info.
-We then check if the retailer is in our (fictional) database of ethical company data.
-If the retailer is in our fictional database and the rating is very poor, we create a feed item that we fire back into the Monzo app.
-If the retailer is in our fictional database and the rating is excellent, we can also create the the feedback item to fire back.
-To stop it becoming spammy, we probably don't want to do this for all transactions, simply the best and worst.
-
+ - When a transation occurs in the Monzo app, we receives a webhook from Monzo with the retailer info.
+ - We then check if the retailer is in our (fictional) database of ethical company data.
+ - If the retailer is in our fictional database and the rating is very poor, we create a feed item that we fire back into the Monzo app.
+ - If the retailer is in our fictional database and the rating is excellent, we can also create the the feedback item to fire back.
+ - To stop it becoming spammy, we probably don't want to do this for all transactions, simply the best and worst.
 
 
 **Tech**
 You will need to sign into the [developers portal](https://developers.monzo.com) with your registered Monzo account email to get the required access token.
 
-![](infrastructure/augment-trans-1.png)
 
 Run the Typscript compiler
 `tsc`
