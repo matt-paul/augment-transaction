@@ -11,3 +11,14 @@ I would normally use the Serverless framework but thought it would be interestin
 - If the retailer is in our fictional database and the rating is very poor, we create a feed item that we fire back into the Monzo app.
 - If the retailer is in our fictional database and the rating is excellent, we can also create the the feedback item to fire back.
 - To stop it becoming spammy, we probably don't want to do this for all transactions, simply the best and worst.
+
+### What does it look like ?
+
+Adding a note to an existing feed item...
+![](pics/add-note.png)
+
+Inserting a new feed item...
+![](pics/feed-item.png)
+
+Clicking through on the new feed item....
+![](pics/feed-item-click-through.jpeg)
