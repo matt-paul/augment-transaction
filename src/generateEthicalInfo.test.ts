@@ -15,6 +15,7 @@ describe("generating ethical data", () => {
     const result = generateEthicalInfo(dbEntry)
     expect(result).toEqual(expectedResult)
   })
+
   test("Generates object for a business with an excellent rating", () => {
     const dbEntry = { name: "The Ethical Sock Company", rating: "5" }
 
@@ -27,5 +28,10 @@ describe("generating ethical data", () => {
 
     const result = generateEthicalInfo(dbEntry)
     expect(result).toEqual(expectedResult)
+  })
+
+  test("Return undefined if the rating is not of interest", () => {
+    const dbEntry = { name: "Yam and Yetis", rating: "3" }
+    expect(generateEthicalInfo(dbEntry)).toBeUndefined()
   })
 })

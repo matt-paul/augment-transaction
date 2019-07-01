@@ -3,10 +3,10 @@ import { DatabaseEntry } from "./types"
 export const fancyDb: Array<DatabaseEntry> = [
   {
     name: "Stunning Shortbread",
-    rating: "Awesome",
+    rating: "5",
   },
   {
     name: "Fancy Falafels",
-    rating: "Not good",
+    rating: "1",
   },
 ]

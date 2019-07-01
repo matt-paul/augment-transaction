@@ -21,13 +21,17 @@ const addToFeed = async (
   params.append("params[body_color]", ethicalInfo.bodyColour)
 
   try {
-    await fetchFn(feedURL, {
+    const res = await fetchFn(feedURL, {
       method: "post",
       body: params,
       headers: { Authorization: `Bearer ${accessToken}` },
     })
+
+    if (!res.ok) {
+      console.log(res.statusText)
+    }
   } catch (error) {
-    throw new Error(error)
+    console.log(error)
   }
 }
 

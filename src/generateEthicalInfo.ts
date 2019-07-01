@@ -2,6 +2,7 @@ import { DatabaseEntry } from "./types"
 
 const generateEthicalInfo = (dbEntry: DatabaseEntry) => {
   const body = `${dbEntry.name} scored ${dbEntry.rating} on the ethical index`
+
   const poorRating = {
     title: "✋Wait a minute..🌍",
     bodyColour: "ff0000",
@@ -21,16 +22,16 @@ const generateEthicalInfo = (dbEntry: DatabaseEntry) => {
         break
       case "5":
         return excellentRating
-      default:
-        break
     }
   }
 
   const styles = styleSelector(dbEntry.rating)
 
-  return {
-    ...styles,
-    body,
+  if (styles) {
+    return {
+      ...styles,
+      body,
+    }
   }
 }
 

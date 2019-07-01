@@ -10,12 +10,12 @@ export const handler = async (event: any) => {
     entry => entry.name === transaction.data.description,
   )
 
-  if (result && result.rating === "1") {
+  if (result) {
     const ethicalInfo = generateEthicalInfo(result)
-    addToFeed(ethicalInfo)
-  }
-
-  return {
-    statusCode: "200",
+    try {
+      ethicalInfo && (await addToFeed(ethicalInfo))
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
